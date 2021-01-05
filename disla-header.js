@@ -18,4 +18,4 @@ exports.display = function (firstName, lastName, assignment) {
 	new Date().toLocaleDateString('en-US') + "\n";
 
 	return output
-}
+};

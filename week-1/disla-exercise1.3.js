@@ -39,4 +39,4 @@ function cellPhone(manufacturer, model, color, price){
 
 var samsung = new cellPhone("Samsung", "Galaxy S20", "black", 349.99);
 
-console.log(samsung.getDetails())
+console.log(samsung.getDetails());
