@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 4.3</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <button id="myBtn" description="delete">Click Me</button>
+
+    <script>
+      $(document).ready(()=>{
+          $('#myBtn').click(()=>{
+            $.ajax({
+                url: 'http://httpbin.org/delete',
+                type: 'DELETE',
+                data: {id: 1235, username: "User", password: "Password"},
+                success: function(data, status) {
+                    console.log('ID: ' + data.form.id + '\nusername: ' + data.form.username + ' \npassword: ' + data.form.password + '\nStatus: ' + status)
+                }
+            });
+          })
+      })
+    </script>
+  </body>
+</html>
