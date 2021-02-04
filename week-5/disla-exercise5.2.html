@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">	
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+		body { 
+			font-family: 'Roboto', sans-serif; 
+		}
+        nav{
+            width: 100%;
+            text-align: center;
+            height: 60px;
+            background-color: rgb(71, 71, 218);
+            color: white;
+            padding: 20px 0 0;
+        }
+        #wrapper{
+            display: grid;
+            justify-items: center;
+            padding: 60px 0;
+        }
+        button{
+            text-align: center;
+            background-color: rgb(233, 233, 233);
+            border: 0;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+	</style>
+    <!-- Example 1 -->
+    <nav>
+        <h2>Proxy Example 1</h2>
+    </nav>
+    <div id = "wrapper">
+        <button id="btn">Run test</button>
+        <br /><span id="info"></span>
+    </wrapper>
+    <script>
+        var truck = {
+            name: "James",
+            occupation: "Web Developer",
+            display: function() {
+                $("#info").html("");
+                $("#info").append("<br />Name: " + this.name + "<br /><br />" + "Occupation: "
+                + this.occupation);
+                }
+            };
+            //instead of THIS being the #btn
+            //proxy allows us to target the info id.
+        $("#btn").click($.proxy(truck, "display"));
+    </script>
+</body>
+</html>
