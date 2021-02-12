@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Exercise 6.2</title>
+    <title>Exercise 6.3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,13 +43,13 @@
      </div>
 
     <script>
-      function PersonViewModel(){
-          this.firstName = ko.observable("John");
-          this.lastName = ko.observable("Disla");
-          this.emailAddress = ko.observable("jondisla@bellevue.edu");
+      var personViewModel = {
+        firstName : "John",
+        lastName : "Disla",
+        emailAddress : "jondisla@bellevue.edu"
       }
 
-      ko.applyBindings(new PersonViewModel())
+      ko.applyBindings(personViewModel);
   </script>
   </body>
 </html>
