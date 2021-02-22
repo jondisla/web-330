@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Exercise 7.4</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-3.5.1.js"></script>
+  </head>
+
+  <body>
+    <div role="main" class="container">
+      <br /><br />
+      <h2 class="text-center">Javascript Tutorials</h2>
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Descroption</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: tutorials">
+          <tr>
+            <td data-bind="text: title"></td>
+            <td data-bind="text: description"></td>
+            <td>
+              <a
+                data-bind="text: link, attr:{href:link}, style:{color:'#3CAEA3'}"
+                target="blank"
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+    </div>
+
+    <script>
+      function TutorialViewModel() {
+        this.tutorials = ko.observableArray([
+          {
+            title: "JavaSCript Tutorial",
+            description: "W3 Schools Javascript Tutorial.",
+            link: "https://www.w3schools.com/js/DEFAULT.asp",
+          },
+          {
+            title: "Working with Objects",
+            description:
+              "How to use objects, properties, functions, and methods, and how to create your own objects.",
+            link:
+              "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects",
+          },
+          {
+            title: "JavaScript Arrays",
+            description: "JavaScript arrays and their basic operations.",
+            link: "https://www.javascripttutorial.net/javascript-array/",
+          },
+          {
+            title: "JavaScript Classes",
+            description:
+              "What is a class, getters and setters and computed names.",
+            link: "https://javascript.info/class",
+          },
+          {
+            title: "JavaScript Ajax",
+            description: "Sending Request and Retrieving the Response.",
+            link:
+              "https://www.tutorialrepublic.com/javascript-tutorial/javascript-ajax.php",
+          },
+        ]);
+      }
+      ko.applyBindings(new TutorialViewModel());
+    </script>
+  </body>
+</html>
